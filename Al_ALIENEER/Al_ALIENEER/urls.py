@@ -19,6 +19,8 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index')
-    path('aialieneer', include('aialieneer.urls'))
+    path('', views.index, name='index'),
+    path('aialieneer', include('aialieneer.urls')),
+    path('aialieneer_blog', include('aialieneer_blog.urls')),
+    
 ]
