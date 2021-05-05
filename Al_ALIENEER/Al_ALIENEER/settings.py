@@ -31,13 +31,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'aialieneer.apps.AialieneerConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'aialieneer',
     'aialieneer_blog',
 ]
 
@@ -88,6 +88,17 @@ DATABASES = {
          'NAME': 'aialieneer',
      }
  }
+
+'''DATABASES = {
+     'default': {
+         'ENGINE': 'djongo',
+         'NAME': 'aialieneer',
+         'HOST': 'mongodb+srv://aialieneer:12345678m@cluster0.oxxt4.mongodb.net/aialieneer?retryWrites=true&w=majority',
+         'USER': 'aialieneer',
+         'PASSWORD':'12345678m',
+     }
+ }'''
+ 
 
 
 # Password validation
