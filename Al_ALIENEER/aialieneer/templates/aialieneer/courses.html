@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-{% extends 'layout.html' %}
+{% extends 'aialieneer/base.html' %}
 {% block body %}
 <body class="courses-page">
     <div class="page-header">
@@ -9,7 +9,8 @@
                 <div class="row">
                     <div class="col-12">
                         <header class="entry-header">
-                            <h1>Courses</h1>
+                            <!-- <h1>Courses</h1> -->
+                            {% block title %}  Courses  {% endblock %}
                         </header><!-- .entry-header -->
                     </div><!-- .col -->
                 </div><!-- .row -->
@@ -21,7 +22,7 @@
             <div class="col-12">
                 <div class="breadcrumbs">
                     <ul class="flex flex-wrap align-items-center p-0 m-0">
-                        <li><a href="{{url_for('index')}}"><i class="fa fa-home"></i> Home</a></li>
+                        <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
                         <li>Courses</li>
                     </ul>
                 </div><!-- .breadcrumbs -->
@@ -35,7 +36,7 @@
                         <div class="col-12 col-md-6 px-25">
                             <div class="course-content">
                                 <figure class="course-thumbnail">
-                                    <a href="#"><img src="{{url_for('static', filename = 'images/1.jpg')}}" alt=""></a>
+                                    <a href="#"><img src="{% static 'aialieneer/images/1.jpg' %}" alt=""></a>
                                 </figure><!-- .course-thumbnail -->
 
                                 <div class="course-content-wrap">
@@ -71,7 +72,7 @@
                         <div class="col-12 col-md-6 px-25">
                             <div class="course-content">
                                 <figure class="course-thumbnail">
-                                    <a href="#"><img src="{{url_for('static', filename = 'images/2.jpg')}}" alt=""></a>
+                                    <a href="#"><img src="{% static 'aialieneer/images/2.jpg' %}" alt=""></a>
                                 </figure><!-- .course-thumbnail -->
 
                                 <div class="course-content-wrap">
@@ -107,7 +108,7 @@
                         <div class="col-12 col-md-6 px-25">
                             <div class="course-content">
                                 <figure class="course-thumbnail">
-                                    <a href="#"><img src="{{url_for('static', filename = 'images/3.jpg')}}" alt=""></a>
+                                    <a href="#"><img src="{% static 'aialieneer/images/3.jpg' %}" alt=""></a>
                                 </figure><!-- .course-thumbnail -->
 
                                 <div class="course-content-wrap">
@@ -143,7 +144,7 @@
                         <div class="col-12 col-md-6 px-25">
                             <div class="course-content">
                                 <figure class="course-thumbnail">
-                                    <a href="#"><img src="{{url_for('static', filename = 'images/4.jpg')}}" alt=""></a>
+                                    <a href="#"><img src="{% static 'aialieneer/images/4.jpg' %}" alt=""></a>
                                 </figure><!-- .course-thumbnail -->
 
                                 <div class="course-content-wrap">
@@ -179,7 +180,7 @@
                         <div class="col-12 col-md-6 px-25">
                             <div class="course-content">
                                 <figure class="course-thumbnail">
-                                    <a href="#"><img src="{{url_for('static', filename = 'images/5.jpg')}}" alt=""></a>
+                                    <a href="#"><img src="{% static 'aialieneer/images/5.jpg' %}" alt=""></a>
                                 </figure><!-- .course-thumbnail -->
 
                                 <div class="course-content-wrap">
@@ -215,7 +216,7 @@
                         <div class="col-12 col-md-6 px-25">
                             <div class="course-content">
                                 <figure class="course-thumbnail">
-                                    <a href="#"><img src="{{url_for('static', filename = 'images/6.jpg')}}" alt=""></a>
+                                    <a href="#"><img src="{% static 'aialieneer/images/6.jpg' %}" alt=""></a>
                                 </figure><!-- .course-thumbnail -->
 
                                 <div class="course-content-wrap">
@@ -304,7 +305,7 @@
 
                         <ul class="p-0 m-0">
                             <li class="flex flex-wrap justify-content-between align-items-center">
-                                <img src="{{url_for('static', filename = 'images/t-1.jpg')}}" alt="">
+                                <img src="{% static 'aialieneer/images/t-1.jpg' %}" alt="">
 
                                 <div class="content-wrap">
                                     <h3><a href="#">The Complete Financial Analyst Training</a></h3>
@@ -314,7 +315,7 @@
                             </li>
 
                             <li class="flex flex-wrap justify-content-between align-items-center">
-                                <img src="{{url_for('static', filename = 'images/t-2.jpg')}}" alt="">
+                                <img src="{% static 'aialieneer/images/t-2.jpg' %}" alt="">
 
                                 <div class="content-wrap">
                                     <h3><a href="#">Complete Java
@@ -325,7 +326,7 @@
                             </li>
 
                             <li class="flex flex-wrap justify-content-between align-items-center">
-                                <img src="{{url_for('static', filename = 'images/t-3.jpg')}}" alt="">
+                                <img src="{% static 'aialieneer/images/t-3.jpg' %}" alt="">
 
                                 <div class="content-wrap">
                                     <h3><a href="#">The Complete Digital Marketing Course</a></h3>
@@ -335,7 +336,7 @@
                             </li>
 
                             <li class="flex flex-wrap justify-content-between align-items-center">
-                                <img src="{{url_for('static', filename = 'images/t-4.jpg')}}" alt="">
+                                <img src="{% static 'aialieneer/images/t-4.jpg' %}" alt="">
 
                                 <div class="content-wrap">
                                     <h3><a href="#">Photoshop CC 2018
@@ -348,7 +349,7 @@
                     </div><!-- .latest-courses -->
 
                     <div class="ads">
-                        <img src="{{url_for('static', filename = 'images/ads.jpg')}}" alt="">
+                        <img src="{% static 'aialieneer/images/ads.jpg' %}" alt="">
                     </div><!-- .ads -->
 
                     <div class="popular-tags">
@@ -367,34 +368,6 @@
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
-
-    <div class="clients-logo">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 flex flex-wrap justify-content-center justify-content-lg-between align-items-center">
-                    <div class="logo-wrap">
-                        <img src="{{url_for('static', filename = 'images/logo-1.png')}}" alt="">
-                    </div><!-- .logo-wrap -->
-
-                    <div class="logo-wrap">
-                        <img src="{{url_for('static', filename = 'images/logo-2.png')}}" alt="">
-                    </div><!-- .logo-wrap -->
-
-                    <div class="logo-wrap">
-                        <img src="{{url_for('static', filename = 'images/logo-3.png')}}" alt="">
-                    </div><!-- .logo-wrap -->
-
-                    <div class="logo-wrap">
-                        <img src="{{url_for('static', filename = 'images/logo-4.png')}}" alt="">
-                    </div><!-- .logo-wrap -->
-
-                    <div class="logo-wrap">
-                        <img src="{{url_for('static', filename = 'images/logo-5.png')}}" alt="">
-                    </div><!-- .logo-wrap -->
-                </div><!-- .col -->
-            </div><!-- .row -->
-        </div><!-- .container -->
-    </div><!-- .clients-logo -->
 
 </body>
 {% endblock %}

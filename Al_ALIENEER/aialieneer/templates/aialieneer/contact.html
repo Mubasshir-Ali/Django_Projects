@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-{% extends 'layout.html' %}
+{% extends 'aialieneer/base.html' %}
 {% block body %}
 
 <body class="contact-page">
@@ -10,7 +10,8 @@
                 <div class="row">
                     <div class="col-12">
                         <header class="entry-header">
-                            <h1>Contact</h1>
+                            <!-- <h1>Contact</h1> -->
+                            {% block title %}  Contact  {% endblock %}
                         </header><!-- .entry-header -->
                     </div><!-- .col -->
                 </div><!-- .row -->
@@ -22,7 +23,7 @@
             <div class="col-12">
                 <div class="breadcrumbs">
                     <ul class="flex flex-wrap align-items-center p-0 m-0">
-                        <li><a href="{{url_for('index')}}"><i class="fa fa-home"></i> Home</a></li>
+                        <li><a href="index"><i class="fa fa-home"></i> Home</a></li>
                         <li>Contact</li>
                     </ul>
                 </div><!-- .breadcrumbs -->
@@ -65,36 +66,6 @@
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
-
-    <div class="clients-logo">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 flex flex-wrap justify-content-center justify-content-lg-between align-items-center">
-                    <div class="logo-wrap">
-                        <img src="{{url_for('static', filename = 'images/logo-1.png')}}" alt="">
-                    </div><!-- .logo-wrap -->
-
-                    <div class="logo-wrap">
-                        <img src="{{url_for('static', filename = 'images/logo-2.png')}}" alt="">
-                    </div><!-- .logo-wrap -->
-
-                    <div class="logo-wrap">
-                        <img src="{{url_for('static', filename = 'images/logo-3.png')}}" alt="">
-                    </div><!-- .logo-wrap -->
-
-                    <div class="logo-wrap">
-                        <img src="{{url_for('static', filename = 'images/logo-4.png')}}" alt="">
-                    </div><!-- .logo-wrap -->
-
-                    <div class="logo-wrap">
-                        <img src="{{url_for('static', filename = 'images/logo-5.png')}}" alt="">
-                    </div><!-- .logo-wrap -->
-                </div><!-- .col -->
-            </div><!-- .row -->
-        </div><!-- .container -->
-    </div><!-- .clients-logo -->
-
-
 </body>
 {% endblock %}
 </html>
