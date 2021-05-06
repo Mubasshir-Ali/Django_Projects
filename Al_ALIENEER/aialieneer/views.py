@@ -1,8 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Course
+from math import ceil
 
 # Create your views here.
 def index(request):
+    courses = Course.objects.all()
+    print(courses)
+    n = len(courses)
+    ncols = n//4 + ceil((n/4) - (n//4))
+    params = {'no_of_columns': ncols, 'range':range(1,ncols), 'course':courses}
     return render(request, 'aialieneer/index.html')
 
 def about(request):

@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-{% extends 'layout.html' %}
+{% extends 'aialieneer/base.html' %}
+
 {% load static %}
+{% block title %}  AI_ALIENEER  {% endblock %}
+
+
+{% block body %} 
 <body>
+    
+    <!-- {% load static %} -->
     <div class="hero-content">
         <div class="hero-content-overlay">
             <div class="container">
@@ -739,5 +746,5 @@
     </div><!-- .clients-logo -->
 
 </body>
-
+{% endblock %}
 </html>

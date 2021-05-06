@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+{% load static%}
 <html lang="en">
-    {% load static %}
+    {% block head %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIALIENEER</title>
+    <title>{% block title %}  AI_ALIENEER  {% endblock %}</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -13,7 +14,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'aialieneer/css/bootstrap.min.css' %}">
-
+    
     <!-- FontAwesome CSS -->
     <link rel="stylesheet" href="{% static 'aialieneer/css/font-awesome.min.css' %}">
 
@@ -27,7 +28,7 @@
     <link rel="stylesheet" href="{% static 'aialieneer/css/swiper.min.css' %}">
 
     <!-- All.Min CSS -->
-    <!-- <link href="{{url_for('static',filename = 'vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css"> -->
+    <link href="{static 'aialieneer/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
@@ -37,8 +38,14 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{% static 'aialieneer/style.css' %}">
+    {% block extra_css %}{% endblock %}
+    
 </head>
+{% endblock %}
+
+{% block body%}
 <body>
+    {% block header %}
     <!-- Header Start -->
     <header class="site-header">
         <div class="top-header-bar">
@@ -109,9 +116,9 @@
         </div><!-- .nav-bar -->
     </header><!-- .site-header -->
     <!-- Header End -->
-
+    {% endblock %}
     
-
+    {% block foot %}
     <!-- Footer Statrt -->
     <footer class="site-footer">
         <div class="footer-widgets">
@@ -203,14 +210,17 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div><!-- .footer-bar -->
     </footer><!-- .site-footer -->
     <!-- Footer End -->
+    {% endblock %}
 
+    {% block javascript %}
 <script type="text/javascript" src="{% static 'aialieneer/js/jquery.js' %}"></script>
 <script type="text/javascript" src="{% static 'aialieneer/js/swiper.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'aialieneer/js/masonry.pkgd.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'aialieneer/js/jquery.collapsible.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'aialieneer/js/custom.js' %}"></script>
-
+{% endblock %}
 
     
 </body>
+{% endblock %}
 </html>
