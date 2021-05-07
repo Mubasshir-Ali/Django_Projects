@@ -36,5 +36,8 @@ def forgot_password(request):
 def single_post(request):
     return render(request, 'aialieneer/single-post.html')
 
+def single_courses(request):
+    return render(request, 'aialieneer/single-courses.html')
+
 def dashboard(request):
     return render(request, 'aialieneer/dashboard.html')

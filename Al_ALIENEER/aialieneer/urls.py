@@ -27,6 +27,7 @@ urlpatterns = [
     path("signup/", views.signup, name="Sign"),
     path("forgot_password/", views.forgot_password, name="Forgot Password"),
     path("single_post/", views.single_post, name="Single Post"),
+    path("single_courses/", views.single_courses, name="Single Courses"),
     # Dashboard urls
     path("dashboard/", views.dashboard, name="Dashboard"),
     # path("", views.index, name="AIHome"),
