@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-    {% extends 'layout.html' %}
-    {% block body %}
+{% extends 'aialieneer/base.html' %}
+
+<!-- {% load static %} -->
+{% block title %}  Single-Post  {% endblock %}
+{% block body %}
 <body class="single-blog-post">
     <div class="page-header">
         <div class="page-header-overlay">
@@ -27,7 +30,7 @@
         <div class="row">
             <div class="col-12 offset-lg-1 col-lg-10">
                 <div class="featured-image">
-                    <img src="{{url_for('static', filename = 'images/single-post.jpg')}}" alt="">
+                    <img src="{% static 'aialieneer/images/single-post.jpg' %}" alt="">
 
                     <div class="posted-date position-absolute">
                         <div class="day">23</div>
@@ -66,7 +69,7 @@
 
                     <p>And it means memories we’ll treasure forever. Our friends think it’s kind of kitschy, but my husband, Mike, and I collect magnets from the places we go. We arrange them on the side of the fridge that faces our table in the kitchen, so that when we’re sitting together we can see the collection, which reminds us of some of our happiest times.</p>
 
-                    <figure class="my-4"><img src="{{url_for('static', filename = 'images/blog-post-img.png')}}" alt=""></figure>
+                    <figure class="my-4"><img src="{% static 'aialieneer/images/blog-post-img.png' %}" alt=""></figure>
 
                     <h3 class="mb-3">Immediate Dividends</h3>
 
@@ -87,14 +90,14 @@
                     <header class="entry-heading flex flex-wrap justify-content-between align-items-center">
                         <h2 class="entry-title">Related Courses</h2>
 
-                        <a href="{{url_for('blog')}}">View all</a>
+                        <a href="blog">View all</a>
                     </header><!-- .entry-heading -->
 
                     <div class="row mx-m-25">
                         <div class="col-12 col-lg-6 px-25">
                             <div class="blog-post-content">
                                 <figure class="blog-post-thumbnail position-relative m-0">
-                                    <a href="{{url_for('single_courses')}}"><img src="{{url_for('static', filename = 'images/b-5.jpg')}}" alt=""></a>
+                                    <a href="single_courses"><img src="{% static 'aialieneer/images/b-5.jpg' %}" alt=""></a>
 
                                     <div class="posted-date position-absolute">
                                         <div class="day">23</div>
@@ -119,7 +122,7 @@
                         <div class="col-12 col-lg-6 px-25">
                             <div class="blog-post-content">
                                 <figure class="blog-post-thumbnail position-relative m-0">
-                                    <a href="{{url_for('single_courses')}}"><img src="{{url_for('static', filename = 'images/b-6.jpg')}}" alt=""></a>
+                                    <a href="single_courses"><img src="{% static 'aialieneer/images/b-6.jpg' %}" alt=""></a>
 
                                     <div class="posted-date position-absolute">
                                         <div class="day">23</div>
@@ -146,7 +149,7 @@
                 <div class="author-box">
                     <div class="author-info flex flex-wrap">
                         <div class="author-avatar">
-                            <img src="{{url_for('static', filename = 'images/instructor.jpg')}}" alt="">
+                            <img src="{% static 'aialieneer/images/instructor.jpg' %}" alt="">
 
                             <ul class="author-social-profile p-0 m-0 mt-3 d-flex flex-wrap align-items-center">
                                 <li><a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a></li>
@@ -173,7 +176,7 @@
                             <li class="comment">
                                 <article class="comment-body">
                                     <figure class="comment-author-avatar">
-                                        <img src="{{url_for('static', filename = 'images/c-1.png')}}" alt="">
+                                        <img src="{% static 'aialieneer/images/c-1.png' %}" alt="">
                                     </figure><!-- .comment-author-avatar -->
 
                                     <div class="comment-wrap">
@@ -202,7 +205,7 @@
                                     <li class="comment">
                                         <article class="comment-body">
                                             <figure class="comment-author-avatar">
-                                                <img src="{{url_for('static', filename = 'images/c-2.png')}}" alt="">
+                                                <img src="{% static 'aialieneer/images/c-2.png' %}" alt="">
                                             </figure><!-- .comment-author-avatar -->
 
                                             <div class="comment-wrap">
@@ -233,7 +236,7 @@
                             <li class="comment">
                                 <article class="comment-body">
                                     <figure class="comment-author-avatar">
-                                        <img src="{{url_for('static', filename = 'images/c-3.png')}}" alt="">
+                                        <img src="{% static 'aialieneer/images/c-3.png' %}" alt="">
                                     </figure><!-- .comment-author-avatar -->
 
                                     <div class="comment-wrap">
@@ -278,34 +281,6 @@
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
-
-    <div class="clients-logo">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 flex flex-wrap justify-content-center justify-content-lg-between align-items-center">
-                    <div class="logo-wrap">
-                        <img src="{{url_for('static', filename = 'images/logo-1.png')}}" alt="">
-                    </div><!-- .logo-wrap -->
-
-                    <div class="logo-wrap">
-                        <img src="{{url_for('static', filename = 'images/logo-2.png')}}" alt="">
-                    </div><!-- .logo-wrap -->
-
-                    <div class="logo-wrap">
-                        <img src="{{url_for('static', filename = 'images/logo-3.png')}}" alt="">
-                    </div><!-- .logo-wrap -->
-
-                    <div class="logo-wrap">
-                        <img src="{{url_for('static', filename = 'images/logo-4.png')}}" alt="">
-                    </div><!-- .logo-wrap -->
-
-                    <div class="logo-wrap">
-                        <img src="{{url_for('static', filename = 'images/logo-5.png')}}" alt="">
-                    </div><!-- .logo-wrap -->
-                </div><!-- .col -->
-            </div><!-- .row -->
-        </div><!-- .container -->
-    </div><!-- .clients-logo -->
 
 </body>
 {% endblock %}

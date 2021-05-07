@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-    {% extends 'layout.html' %}
+{% extends 'aialieneer/base.html' %}
+
+<!-- {% load static %} -->
+{% block title %}  Single-Course  {% endblock %}
     {% block body %}
 <body class="single-courses-page">
     <div class="page-header">
@@ -30,7 +33,7 @@
         <div class="row">
             <div class="col-12 offset-lg-1 col-lg-10">
                 <div class="featured-image">
-                    <img src="{{url_for('static', filename = 'images/single-course-featured-img.jpg')}}" alt="">
+                    <img src="{% static 'aialieneer/images/single-course-featured-img.jpg' %}" alt="">
 
                     <div class="course-cost">Free</div>
                 </div>
@@ -56,7 +59,7 @@
                 <div class="single-course-wrap">
                     <div class="course-info flex flex-wrap align-items-center">
                         <div class="course-author flex flex-wrap align-items-center mt-3">
-                            <img src="{{url_for('static', filename = 'images/course-author.jpg')}}" alt="">
+                            <img src="{% static 'aialieneer/images/course-author.jpg %}" alt="">
 
                             <div class="author-wrap">
                                 <label class="m-0">Teacher</label>
@@ -417,7 +420,7 @@
 
                         <div class="instructor-short-info flex flex-wrap">
                             <div class="instructors-stats">
-                                <img src="{{url_for('static', filename = 'images/instructor.jpg')}}" alt="">
+                                <img src="{% static 'aialieneer/images/instructor.jpg %}" alt="">
 
                                 <ul class="p-0 m-0 mt-3">
                                    <li><i class="fa fa-star"></i> 4.7 .7 Average rating</li>
@@ -454,14 +457,14 @@
                         <header class="entry-heading flex flex-wrap justify-content-between align-items-center">
                             <h2 class="entry-title">Related Courses</h2>
 
-                            <a href="{{url_for('courses')}}">View all</a>
+                            <a href="courses">View all</a>
                         </header><!-- .entry-heading -->
 
                         <div class="row mx-m-25">
                             <div class="col-12 col-lg-6 px-25">
                                 <div class="course-content">
                                     <figure class="course-thumbnail">
-                                        <a href="#"><img src="{{url_for('static', filename = 'images/3.jpg')}}" alt=""></a>
+                                        <a href="#"><img src="{% static 'aialieneer/images/3.jpg %}" alt=""></a>
                                     </figure><!-- .course-thumbnail -->
 
                                     <div class="course-content-wrap">
@@ -497,7 +500,7 @@
                             <div class="col-12 col-lg-6 px-25">
                                 <div class="course-content">
                                     <figure class="course-thumbnail">
-                                        <a href="#"><img src="{{url_for('static', filename = 'images/2.jpg')}}" alt=""></a>
+                                        <a href="#"><img src="{% static 'aialieneer/images/2.jpg %}" alt=""></a>
                                     </figure><!-- .course-thumbnail -->
 
                                     <div class="course-content-wrap">
@@ -535,35 +538,7 @@
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
-
-    <div class="clients-logo">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 flex flex-wrap justify-content-center justify-content-lg-between align-items-center">
-                    <div class="logo-wrap">
-                        <img src="{{url_for('static', filename = 'images/logo-1.png')}}" alt="">
-                    </div><!-- .logo-wrap -->
-
-                    <div class="logo-wrap">
-                        <img src="{{url_for('static', filename = 'images/logo-2.png')}}" alt="">
-                    </div><!-- .logo-wrap -->
-
-                    <div class="logo-wrap">
-                        <img src="{{url_for('static', filename = 'images/logo-3.png')}}" alt="">
-                    </div><!-- .logo-wrap -->
-
-                    <div class="logo-wrap">
-                        <img src="{{url_for('static', filename = 'images/logo-4.png')}}" alt="">
-                    </div><!-- .logo-wrap -->
-
-                    <div class="logo-wrap">
-                        <img src="{{url_for('static', filename = 'images/logo-5.png')}}" alt="">
-                    </div><!-- .logo-wrap -->
-                </div><!-- .col -->
-            </div><!-- .row -->
-        </div><!-- .container -->
-    </div><!-- .clients-logo -->
-
+    
 </body>
 {% endblock %}
 </html>
