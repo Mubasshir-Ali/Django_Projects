@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-
+{% load static%}
 <html lang="en">
-    
+    {% block head %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}  AI_ALIENEER  {% endblock %}</title>
-    {% load static %}
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    {% block css %}
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'aialieneer/css/bootstrap.min.css' %}">
     
@@ -38,17 +38,16 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{% static 'aialieneer/style.css' %}">
-    {% endblock %}
+    {% block extra_css %}{% endblock %}
     
 </head>
+{% endblock %}
 
-
-
+{% block body%}
 <body>
-    
+    {% block header %}
     <!-- Header Start -->
     <header class="site-header">
-        {% block header %}
         <div class="top-header-bar">
             <div class="container-fluid">
                 <div class="row">
@@ -82,13 +81,11 @@
         </div><!-- .top-header-bar -->
 
         <div class="nav-bar">
-            {% block nav %}
             <div class="container">
                 <div class="row">
                     <div class="col-9 col-lg-3">
-                        
                         <div class="site-branding">
-                            <h1 class="site-title"><a href="index.html" rel="home">AI<span>ALIENEER</span></a></h1>
+                            <h1 class="site-title"><a href="index.html" rel="home">AI<span>ENGINEER</span></a></h1>
                         </div><!-- .site-branding -->
                     </div><!-- .col -->
 
@@ -116,16 +113,14 @@
                     </div><!-- .col -->
                 </div><!-- .row -->
             </div><!-- .container -->
-            {% endblock %}
         </div><!-- .nav-bar -->
-        {% endblock %}
     </header><!-- .site-header -->
     <!-- Header End -->
-    {% block body %} {% endblock %}
-    
+    {% endblock %}
 
+
+    {% block logo %}
     <div class="clients-logo">
-        {% block logo %}  
         <div class="container">
             <div class="row">
                 <div class="col-12 flex flex-wrap justify-content-center justify-content-lg-between align-items-center">
@@ -151,12 +146,12 @@
                 </div><!-- .col -->
             </div><!-- .row -->
         </div><!-- .container -->
-        {% endblock %}
     </div><!-- .clients-logo -->
-   
+    {% endblock %}
+    
+    {% block foot %}
     <!-- Footer Statrt -->
     <footer class="site-footer">
-        {% block footer %}
         <div class="footer-widgets">
             <div class="container">
                 <div class="row">
@@ -244,9 +239,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 </div><!-- .row -->
             </div><!-- .container -->
         </div><!-- .footer-bar -->
-        {% endblock %}
     </footer><!-- .site-footer -->
     <!-- Footer End -->
+    {% endblock %}
+
 {% block javascript %}
 <script type="text/javascript" src="{% static 'aialieneer/js/jquery.js' %}"></script>
 <script type="text/javascript" src="{% static 'aialieneer/js/swiper.min.js' %}"></script>
@@ -256,6 +252,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 {% endblock %}
 
     
-<!-- </body> -->
-
+</body>
+{% endblock %}
 </html>
