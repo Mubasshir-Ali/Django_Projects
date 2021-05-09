@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
     {% extends 'aialieneer/base2.html' %}
 
     {% block title %}  Login  {% endblock %}
 
-{% block body %}
+
 <body class="bg-gradient-primary">
+    {% block body %} 
+    {% load static %}
     <div class="container">
 
         <!-- Outer Row -->
@@ -70,6 +70,4 @@
         </div>
 
     </div>
-</body>
-{% endblock %}
-</html>
+    {% endblock %}
