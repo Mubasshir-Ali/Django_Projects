@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-{% extends 'aialieneer/base.html' %}
+{% extends "aialieneer/base.html" %}
+{% block title %}  single_post  {% endblock %}
 
-<!-- {% load static %} -->
-{% block title %}  Single-Post  {% endblock %}
-{% block body %}
+
 <body class="single-blog-post">
+    {% block body %} 
+    {% load static %}
     <div class="page-header">
         <div class="page-header-overlay">
             <div class="container">
@@ -30,7 +29,7 @@
         <div class="row">
             <div class="col-12 offset-lg-1 col-lg-10">
                 <div class="featured-image">
-                    <img src="{% static 'aialieneer/images/single-post.jpg' %}" alt="">
+                    <img src="{% static 'aialieneer/images/single_post.jpg' %}" alt="">
 
                     <div class="posted-date position-absolute">
                         <div class="day">23</div>
@@ -56,7 +55,7 @@
             </div><!-- .col -->
 
             <div class="col-12 col-lg-8">
-                <div class="single-post-wrap">
+                <div class="single_post-wrap">
                     <p>This is what we do: My husband monitors travel sites and email subscription services for super-cheap flights or error fares. Sometimes one of us travels for work and the other tags along. When we find a good deal, we make a split-second decision—because great airfares don’t last long—and then start planning. We’re both freelance writers, so we have some flexibility in terms of scheduling. We watch hotel prices, and often book rooms using points, free nights and other discounts. We plan carefully, and if we decide that a trip might involve stops in multiple cities, we price our transportation options. We check exchange rates on currency. We read up on attractions, look for deals, and seek out free walking tours.</p>
 
                     <blockquote>
@@ -76,7 +75,7 @@
                     <p>Some part of the benefit is purely financial. There are experiences and lessons you learn on the road that can be directly applied to business and investment. You witness firsthand new trends, or the way old trends have shown up in new places, or the way some trends seem nearly universal. You see for yourself new styles of clothing, where young professionals are shopping, which brands are popular in different places. </p>
 
                     <p>In some countries, you need only to scan a busy street to get a clear sense of what might soon be popular in the U.S., and which American exports might be the next big thing somewhere else. (In Portugal, we were surprised when a woman in her 20s told us how much she loves Guy Fieri.)</p>
-                </div><!-- .single-post-wrap -->
+                </div><!-- .single_post-wrap -->
 
                 <div class="tags-links mt-4">
                     <ul class="d-flex flex-wrap align-items-center p-0 m-0">
@@ -282,6 +281,4 @@
         </div><!-- .row -->
     </div><!-- .container -->
 
-</body>
 {% endblock %}
-</html>

@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-{% extends 'aialieneer/base.html' %}
+{% extends "aialieneer/base.html" %}
 
-<!-- {% load static %} -->
-{% block title %}  Single-Course  {% endblock %}
-    {% block body %}
+{% block title %}  Singe-Courses  {% endblock %}
+
 <body class="single-courses-page">
+    {% block body %} 
+    {% load static %}
     <div class="page-header">
         <div class="page-header-overlay">
             <div class="container">
@@ -59,7 +58,7 @@
                 <div class="single-course-wrap">
                     <div class="course-info flex flex-wrap align-items-center">
                         <div class="course-author flex flex-wrap align-items-center mt-3">
-                            <img src="{% static 'aialieneer/images/course-author.jpg %}" alt="">
+                            <img src="{% static 'aialieneer/images/course-author.jpg' %}" alt="">
 
                             <div class="author-wrap">
                                 <label class="m-0">Teacher</label>
@@ -420,7 +419,7 @@
 
                         <div class="instructor-short-info flex flex-wrap">
                             <div class="instructors-stats">
-                                <img src="{% static 'aialieneer/images/instructor.jpg %}" alt="">
+                                <img src="{% static 'aialieneer/images/instructor.jpg' %}" alt="">
 
                                 <ul class="p-0 m-0 mt-3">
                                    <li><i class="fa fa-star"></i> 4.7 .7 Average rating</li>
@@ -464,7 +463,7 @@
                             <div class="col-12 col-lg-6 px-25">
                                 <div class="course-content">
                                     <figure class="course-thumbnail">
-                                        <a href="#"><img src="{% static 'aialieneer/images/3.jpg %}" alt=""></a>
+                                        <a href="#"><img src="{% static 'aialieneer/images/3.jpg' %}" alt=""></a>
                                     </figure><!-- .course-thumbnail -->
 
                                     <div class="course-content-wrap">
@@ -500,7 +499,7 @@
                             <div class="col-12 col-lg-6 px-25">
                                 <div class="course-content">
                                     <figure class="course-thumbnail">
-                                        <a href="#"><img src="{% static 'aialieneer/images/2.jpg %}" alt=""></a>
+                                        <a href="#"><img src="{% static 'aialieneer/images/2.jpg' %}" alt=""></a>
                                     </figure><!-- .course-thumbnail -->
 
                                     <div class="course-content-wrap">
@@ -539,6 +538,4 @@
         </div><!-- .row -->
     </div><!-- .container -->
     
-</body>
 {% endblock %}
-</html>
