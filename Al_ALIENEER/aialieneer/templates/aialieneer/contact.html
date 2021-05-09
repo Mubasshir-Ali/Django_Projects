@@ -1,17 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-{% extends 'aialieneer/base.html' %}
-{% block body %}
+{% extends "aialieneer/base.html" %}
 
-<body class="contact-page">
+{% block title %}  Contact  {% endblock %}
+
+<body>
+    {% block body %} 
+    {% load static %}
     <div class="page-header">
         <div class="page-header-overlay">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <header class="entry-header">
-                            <!-- <h1>Contact</h1> -->
-                            {% block title %}  Contact  {% endblock %}
+                            <h1>Contact</h1>
                         </header><!-- .entry-header -->
                     </div><!-- .col -->
                 </div><!-- .row -->
@@ -66,6 +66,4 @@
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
-</body>
 {% endblock %}
-</html>

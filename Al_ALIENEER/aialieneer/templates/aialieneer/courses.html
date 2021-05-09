@@ -1,16 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-{% extends 'aialieneer/base.html' %}
-{% block body %}
+{% extends "aialieneer/base.html" %}
+
+{% block title %}  Courses  {% endblock %}
+
 <body class="courses-page">
+    {% block body %} 
+    {% load static %}
     <div class="page-header">
         <div class="page-header-overlay">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <header class="entry-header">
-                            <!-- <h1>Courses</h1> -->
-                            {% block title %}  Courses  {% endblock %}
+                            <h1>Courses</h1>
                         </header><!-- .entry-header -->
                     </div><!-- .col -->
                 </div><!-- .row -->
@@ -22,7 +23,7 @@
             <div class="col-12">
                 <div class="breadcrumbs">
                     <ul class="flex flex-wrap align-items-center p-0 m-0">
-                        <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                        <li><a href="index"><i class="fa fa-home"></i> Home</a></li>
                         <li>Courses</li>
                     </ul>
                 </div><!-- .breadcrumbs -->
@@ -368,7 +369,4 @@
             </div><!-- .col -->
         </div><!-- .row -->
     </div><!-- .container -->
-
-</body>
 {% endblock %}
-</html>
