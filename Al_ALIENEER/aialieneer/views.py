@@ -10,7 +10,7 @@ def index(request):
     # n = len(courses)
     # ncols = n//4 + ceil((n/4) - (n//4))
     # params = {'no_of_columns': ncols, 'range':range(1,ncols), 'course':courses}
-    return render(request, 'aialieneer/index.html')
+    return render(request, 'aialieneer/index.html',{'courses': courses})
 
 def about(request):
     return render(request, 'aialieneer/about.html')

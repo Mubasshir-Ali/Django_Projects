@@ -5,9 +5,14 @@
 <body>
 {% block body %} 
 {% load static %}
+
+
     <div class="hero-content">
         <div class="hero-content-overlay">
+            
             <div class="container">
+
+                
                 <div class="row">
                     <div class="col-12">
                         <div class="hero-content-wrap flex flex-column justify-content-center align-items-start">
@@ -107,6 +112,7 @@
             </div><!-- .row -->
         </div><!-- .container-fluid -->
     </div><!-- .icon-boxes -->
+    
 
     <section class="featured-courses horizontal-column courses-wrap">
         <div class="container">
@@ -120,11 +126,11 @@
                 </div><!-- .col -->
                 
                 <div class="col-12 col-lg-6">
-                    
+                    {% for course in courses %}
                     <div class="course-content flex flex-wrap justify-content-between align-content-lg-stretch">
                         
                         <figure class="course-thumbnail">
-                            <a href="single_courses"><img src="/media/{{course.0.image}}" alt=""></a>
+                            <a href="single_courses"><img src="/media/{{course.image}}" alt=""></a>
                         </figure><!-- .course-thumbnail -->
 
                         <div class="course-content-wrap">
@@ -138,7 +144,8 @@
 
                                     <span class="course-ratings-count">(4 votes)</span>
                                 </div><!-- .course-ratings -->
-                                {% for course in courses %}
+                                
+                                
                                 <h2 class="entry-title"><a href="single_courses">{{ course.course_title }}</a></h2>
 
                                 <div class="entry-meta flex flex-wrap align-items-center">
@@ -154,8 +161,9 @@
                                 </div><!-- .course-cost -->
                             </footer><!-- .entry-footer -->
                         </div><!-- .course-content-wrap -->
-                        {% endfor %}
+                        
                     </div><!-- .course-content -->
+                    {% endfor %}
                 </div><!-- .col -->
             </div><!-- .row -->
         </div><!-- .container -->
