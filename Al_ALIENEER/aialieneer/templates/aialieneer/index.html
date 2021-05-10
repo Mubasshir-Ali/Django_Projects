@@ -118,11 +118,13 @@
                         <a class="btn mt-4 mt-sm-0" href="single_courses">view all</a>
                     </header><!-- .heading -->
                 </div><!-- .col -->
-
+                
                 <div class="col-12 col-lg-6">
+                    
                     <div class="course-content flex flex-wrap justify-content-between align-content-lg-stretch">
+                        
                         <figure class="course-thumbnail">
-                            <a href="single_courses"><img src="{% static 'aialieneer/images/1.jpg' %}" alt=""></a>
+                            <a href="single_courses"><img src="/media/{{course.0.image}}" alt=""></a>
                         </figure><!-- .course-thumbnail -->
 
                         <div class="course-content-wrap">
@@ -136,58 +138,23 @@
 
                                     <span class="course-ratings-count">(4 votes)</span>
                                 </div><!-- .course-ratings -->
-
-                                <h2 class="entry-title"><a href="single_courses">The Complete Android Developer Course</a></h2>
+                                {% for course in courses %}
+                                <h2 class="entry-title"><a href="single_courses">{{ course.course_title }}</a></h2>
 
                                 <div class="entry-meta flex flex-wrap align-items-center">
-                                    <div class="course-author"><a href="#">Ms. Lara Croft </a></div>
+                                    <div class="course-author"><a href="#"> {{ course.course_author }} </a></div>
 
-                                    <div class="course-date">July 21, 2018</div>
+                                    <div class="course-date">{{ course.pub_date }}</div>
                                 </div><!-- .course-date -->
                             </header><!-- .entry-header -->
 
                             <footer class="entry-footer flex justify-content-between align-items-center">
                                 <div class="course-cost">
-                                    <span class="free-cost">Free</span>
+                                    <span class="free-cost">{{ course.course_type }}</span>
                                 </div><!-- .course-cost -->
                             </footer><!-- .entry-footer -->
                         </div><!-- .course-content-wrap -->
-                    </div><!-- .course-content -->
-                </div><!-- .col -->
-
-                <div class="col-12 col-lg-6">
-                    <div class="course-content flex flex-wrap justify-content-between align-content-lg-stretch">
-                        <figure class="course-thumbnail">
-                            <a href="single_courses"><img src="{% static 'aialieneer/images/2.jpg' %}" alt=""></a>
-                        </figure><!-- .course-thumbnail -->
-
-                        <div class="course-content-wrap">
-                            <header class="entry-header">
-                                <div class="course-ratings flex align-items-center">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star-o"></span>
-
-                                    <span class="course-ratings-count">(4 votes)</span>
-                                </div><!-- .course-ratings -->
-
-                                <h2 class="entry-title"><a href="single_courses">Learn Photoshop, Web Design & Profitable</a></h2>
-
-                                <div class="entry-meta flex flex-wrap align-items-center">
-                                    <div class="course-author"><a href="#">Mr. John Wick</a></div>
-
-                                    <div class="course-date">Aug 21, 2018</div>
-                                </div><!-- .course-date -->
-                            </header><!-- .entry-header -->
-
-                            <footer class="entry-footer flex justify-content-between align-items-center">
-                                <div class="course-cost">
-                                    $32 <span class="price-drop">$59</span>
-                                </div><!-- .course-cost -->
-                            </footer><!-- .entry-footer -->
-                        </div><!-- .course-content-wrap -->
+                        {% endfor %}
                     </div><!-- .course-content -->
                 </div><!-- .col -->
             </div><!-- .row -->
