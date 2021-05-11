@@ -1,4 +1,6 @@
 from django.db import models
+import pymongo
+import datetime
 
 # Create your models here.
 
@@ -17,3 +19,21 @@ class Course(models.Model):
     class Meta:
         ordering = ['-pub_date']
 
+########################################################################
+#                       pymongo Database Setup
+########################################################################
+
+client = pymongo.MongoClient(host="localhost", port=27017)
+
+db = client['aialieneer']
+
+########################################################################
+#                    Create Collections Means Tables
+########################################################################
+col_posts = db['posts']
+
+posts_data = {'post_title':'AI', 'post_slug':'ai', 'post_author':'PAGAL', 'pub_date': datetime.datetime.now(), 'url':'aialieneer/images'}
+
+col_posts.insert_one(posts_data)
+
+#print(db.list_collection_names())
