@@ -124,9 +124,10 @@
                         <a class="btn mt-4 mt-sm-0" href="single_courses">view all</a>
                     </header><!-- .heading -->
                 </div><!-- .col -->
-                
+                {% for course in courses %}
+                    {% if course.id == 6 or course.id == 7  %}
                 <div class="col-12 col-lg-6">
-                    {% for course in courses %}
+                    
                     <div class="course-content flex flex-wrap justify-content-between align-content-lg-stretch">
                         
                         <figure class="course-thumbnail">
@@ -163,8 +164,10 @@
                         </div><!-- .course-content-wrap -->
                         
                     </div><!-- .course-content -->
-                    {% endfor %}
+                        
                 </div><!-- .col -->
+                    {% endif %}
+                {% endfor %}
             </div><!-- .row -->
         </div><!-- .container -->
     </section><!-- .courses-wrap -->
@@ -316,27 +319,27 @@
                         </nav><!-- .courses-menu -->
                     </header><!-- .heading -->
                 </div><!-- .col -->
-
+                {% for course in courses %}
                 <div class="col-12 col-md-6 col-lg-4 px-25">
                     <div class="course-content">
                         <figure class="course-thumbnail">
-                            <a href="single_courses"><img src="{% static 'aialieneer/images/1.jpg' %}" alt=""></a>
+                            <a href="single_courses"><img src="/media/{{course.image}}" alt=""></a>
                         </figure><!-- .course-thumbnail -->
 
                         <div class="course-content-wrap">
                             <header class="entry-header">
-                                <h2 class="entry-title"><a href="#">The Complete Android Developer Course</a></h2>
+                                <h2 class="entry-title"><a href="#">{{course.course_title}}</a></h2>
 
                                 <div class="entry-meta flex align-items-center">
-                                    <div class="course-author"><a href="#">Ms. Lara Croft </a></div>
+                                    <div class="course-author"><a href="#">{{course.course_author}}</a></div>
 
-                                    <div class="course-date">July 21, 2018</div>
+                                    <div class="course-date">{{course.pub_date}}</div>
                                 </div><!-- .course-date -->
                             </header><!-- .entry-header -->
 
                             <footer class="entry-footer flex justify-content-between align-items-center">
                                 <div class="course-cost">
-                                    $45 <span class="price-drop">$68</span>
+                                    <span class="free-cost">{{ course.course_type }}</span>
                                 </div><!-- .course-cost -->
 
                                 <div class="course-ratings flex justify-content-end align-items-center">
@@ -352,187 +355,8 @@
                         </div><!-- .course-content-wrap -->
                     </div><!-- .course-content -->
                 </div><!-- .col -->
-
-                <div class="col-12 col-md-6 col-lg-4 px-25">
-                    <div class="course-content">
-                        <figure class="course-thumbnail">
-                            <a href="single_courses"><img src="{% static 'aialieneer/images/2.jpg' %}" alt=""></a>
-                        </figure><!-- .course-thumbnail -->
-
-                        <div class="course-content-wrap">
-                            <header class="entry-header">
-                                <h2 class="entry-title"><a href="#">The Ultimate Drawing Course Beginner to Advanced</a></h2>
-
-                                <div class="entry-meta flex align-items-center">
-                                    <div class="course-author"><a href="#">Michelle Golden</a></div>
-
-                                    <div class="course-date">Mar 14, 2018</div>
-                                </div><!-- .course-date -->
-                            </header><!-- .entry-header -->
-
-                            <footer class="entry-footer flex justify-content-between align-items-center">
-                                <div class="course-cost">
-                                    <span class="free-cost">Free</span>
-                                </div><!-- .price-drop -->
-
-                                <div class="course-ratings flex justify-content-end align-items-center">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star-o"></span>
-
-                                    <span class="course-ratings-count">(4 votes)</span>
-                                </div><!-- .course-ratings -->
-                            </footer><!-- .entry-footer -->
-                        </div><!-- .course-content-wrap -->
-                    </div><!-- .course-content -->
-                </div><!-- .col -->
-
-                <div class="col-12 col-md-6 col-lg-4 px-25">
-                    <div class="course-content">
-                        <figure class="course-thumbnail">
-                            <a href="single_courses"><img src="{% static 'aialieneer/images/3.jpg' %}" alt=""></a>
-                        </figure><!-- .course-thumbnail -->
-
-                        <div class="course-content-wrap">
-                            <header class="entry-header">
-                                <h2 class="entry-title"><a href="#">The Complete Digital Marketing Course</a></h2>
-
-                                <div class="entry-meta flex align-items-center">
-                                    <div class="course-author"><a href="#">Ms. Lucius</a></div>
-
-                                    <div class="course-date">Dec 18, 2018</div>
-                                </div><!-- .course-date -->
-                            </header><!-- .entry-header -->
-
-                            <footer class="entry-footer flex justify-content-between align-items-center">
-                                <div class="course-cost">
-                                    $55 <span class="price-drop">$78</span>
-                                </div><!-- .course-cost -->
-
-                                <div class="course-ratings flex justify-content-end align-items-center">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star-o"></span>
-
-                                    <span class="course-ratings-count">(4 votes)</span>
-                                </div><!-- .course-ratings -->
-                            </footer><!-- .entry-footer -->
-                        </div><!-- .course-content-wrap -->
-                    </div><!-- .course-content -->
-                </div><!-- .col -->
-
-                <div class="col-12 col-md-6 col-lg-4 px-25">
-                    <div class="course-content">
-                        <figure class="course-thumbnail">
-                            <a href="single_courses"><img src="{% static 'aialieneer/images/4.jpg' %}" alt=""></a>
-                        </figure><!-- .course-thumbnail -->
-
-                        <div class="course-content-wrap">
-                            <header class="entry-header">
-                                <h2 class="entry-title"><a href="#">The Unreal Engine Developer Course</a></h2>
-
-                                <div class="entry-meta flex align-items-center">
-                                    <div class="course-author"><a href="#">Mr. John Wick</a></div>
-
-                                    <div class="course-date">Otc 17, 2018</div>
-                                </div><!-- .course-date -->
-                            </header><!-- .entry-header -->
-
-                            <footer class="entry-footer flex justify-content-between align-items-center">
-                                <div class="course-cost">
-                                    <span class="free-cost">Free</span>
-                                </div><!-- .course-cost -->
-
-                                <div class="course-ratings flex justify-content-end align-items-center">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star-o"></span>
-
-                                    <span class="course-ratings-count">(4 votes)</span>
-                                </div><!-- .course-ratings -->
-                            </footer><!-- .entry-footer -->
-                        </div><!-- .course-content-wrap -->
-                    </div><!-- .course-content -->
-                </div><!-- .col -->
-
-                <div class="col-12 col-md-6 col-lg-4 px-25">
-                    <div class="course-content">
-                        <figure class="course-thumbnail">
-                            <a href="single_courses"><img src="{% static 'aialieneer/images/5.jpg' %}" alt=""></a>
-                        </figure><!-- .course-thumbnail -->
-
-                        <div class="course-content-wrap">
-                            <header class="entry-header">
-                                <h2 class="entry-title"><a href="#">Progressive Web Apps (PWA) - The Complete Guide</a></h2>
-
-                                <div class="entry-meta flex align-items-center">
-                                    <div class="course-author"><a href="#">Mr. Tom Redder</a></div>
-
-                                    <div class="course-date">Sep 14, 2018</div>
-                                </div><!-- .course-date -->
-                            </header><!-- .entry-header -->
-
-                            <footer class="entry-footer flex justify-content-between align-items-center">
-                                <div class="course-cost">
-                                    $38 <span class="price-drop">$48</span>
-                                </div><!-- .course-cost -->
-
-                                <div class="course-ratings flex justify-content-end align-items-center">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star-o"></span>
-
-                                    <span class="course-ratings-count">(4 votes)</span>
-                                </div><!-- .course-ratings -->
-                            </footer><!-- .entry-footer -->
-                        </div><!-- .course-content-wrap -->
-                    </div><!-- .course-content -->
-                </div><!-- .col -->
-
-                <div class="col-12 col-md-6 col-lg-4 px-25">
-                    <div class="course-content">
-                        <figure class="course-thumbnail">
-                            <a href="single_courses"><img src="{% static 'aialieneer/images/6.jpg' %}" alt=""></a>
-                        </figure><!-- .course-thumbnail -->
-
-                        <div class="course-content-wrap">
-                            <header class="entry-header">
-                                <h2 class="entry-title"><a href="#">Cryptocurrency Investment Course 2018</a></h2>
-
-                                <div class="entry-meta flex align-items-center">
-                                    <div class="course-author"><a href="#">Russell Stephens</a></div>
-
-                                    <div class="course-date">Nov 06, 2018</div>
-                                </div><!-- .course-date -->
-                            </header><!-- .entry-header -->
-
-                            <footer class="entry-footer flex justify-content-between align-items-center">
-                                <div class="course-cost">
-                                    <span class="free-cost">Free</span>
-                                </div><!-- .course-cost -->
-
-                                <div class="course-ratings flex justify-content-end align-items-center">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star-o"></span>
-
-                                    <span class="course-ratings-count">(4 votes)</span>
-                                </div><!-- .course-ratings -->
-                            </footer><!-- .entry-footer -->
-                        </div><!-- .course-content-wrap -->
-                    </div><!-- .course-content -->
-                </div><!-- .col -->
-
+                {% endfor %}
+                
                 <div class="col-12 px-25 flex justify-content-center">
                     <a class="btn" href="#">view all courses</a>
                 </div><!-- .col -->

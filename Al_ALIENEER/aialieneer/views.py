@@ -1,11 +1,17 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Course
+# from .models import Course
+from django.db.models import Count
+from .models import *
 from math import ceil
 
 # Create your views here.
 def index(request):
-    courses = Course.objects.all()
+    # courses = Course.objects.order_by('id')
+    # courses = Course.objects.all()[:6]
+    courses = Course.objects.order_by('pub_date')[0:6]
+    # posts = Post.updateMany( {}, { $rename: { "post_type": "text" } } )
+    # courses = Course.objects.last()
     # print(courses)
     # n = len(courses)
     # ncols = n//4 + ceil((n/4) - (n//4))

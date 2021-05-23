@@ -21,12 +21,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-je6w8!dsdxdbdle)9ojjk$tad5*rzoi8q!a2snm6=*@lb@a*r@'
+# SECRET_KEY = 'django-insecure-je6w8!dsdxdbdle)9ojjk$tad5*rzoi8q!a2snm6=*@lb@a*r@'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -85,22 +87,58 @@ WSGI_APPLICATION = 'Al_ALIENEER.wsgi.application'
     }
 }'''
 
-DATABASES = {
-     'default': {
-         'ENGINE': 'djongo',
-         'NAME': 'aialieneer',
-     }
- }
-
 '''DATABASES = {
      'default': {
          'ENGINE': 'djongo',
          'NAME': 'aialieneer',
-         'HOST': 'mongodb+srv://aialieneer:12345678m@cluster0.oxxt4.mongodb.net/aialieneer?retryWrites=true&w=majority',
-         'USER': 'aialieneer',
-         'PASSWORD':'12345678m',
      }
  }'''
+
+'''DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'aialieneer',
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+            'host': 'localhost',
+            'port': 27017,
+            'username': 'aialieneer',
+            'password': '12345678m',
+            'authSource': 'aialieneer',
+            'authMechanism': 'SCRAM-SHA-1'
+        },
+        'LOGGING': {
+            'version': 1,
+            'loggers': {
+                'djongo': {
+                    'level': 'DEBUG',
+                    'propagate': False,                        
+                }
+            },
+        },
+    }
+}'''
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'aialieneer',
+        'HOST': 'mongodb+srv://aialieneer:12345678m@cluster0.oxxt4.mongodb.net/aialieneer?retryWrites=true&w=majority',
+        'USER': 'aialieneer',
+        'PASSWORD':'12345678m',
+    }  
+ }
+
+# import mongoengine
+# from mongoengine import *
+# mongoengine.connect(db='aialieneer', host='localhost', username='aialieneer', password='12345678m')
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'djongo',           #'django.db.backends.sqlite3',
+#        'NAME': 'aialieneer',              # DB name
+#        'USER': 'aialieneer',               # DB User name <optional>
+#    }
+# }
  
 
 
@@ -141,6 +179,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/static/'  # enter this line Manually
  
 # Manage Media
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
