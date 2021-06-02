@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   djangoprojects:
-    image: djangoprojects
+    image: djangoprojectspython -m pip install Pillow
     build:
       context: .
       dockerfile: ./Dockerfile
