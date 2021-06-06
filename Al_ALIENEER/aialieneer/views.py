@@ -16,7 +16,11 @@ def index(request):
     # n = len(courses)
     # ncols = n//4 + ceil((n/4) - (n//4))
     # params = {'no_of_columns': ncols, 'range':range(1,ncols), 'course':courses}
-    return render(request, 'aialieneer/index.html',{'courses': courses})
+    ml = Course.objects.filter(course_category='ML')
+    dl = Course.objects.filter(course_category='DL')
+    cv = Course.objects.filter(course_category='CV')
+    nlp = Course.objects.filter(course_category='NLP')
+    return render(request, 'aialieneer/index.html',{'courses': courses, 'ml':ml})
 
 def about(request):
     return render(request, 'aialieneer/about.html')

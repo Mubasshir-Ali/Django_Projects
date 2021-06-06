@@ -1,0 +1,1 @@
+mongodump --username aialieneer --password 12345678m --out=/backup/

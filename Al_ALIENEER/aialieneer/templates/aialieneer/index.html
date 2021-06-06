@@ -311,16 +311,16 @@
                         <nav class="courses-menu mt-3 mt-lg-0">
                             <ul class="flex flex-wrap justify-content-md-end align-items-center">
                                 <li class="active"><a href="#">All</a></li>
-                                <li><a href="#">Business</a></li>
-                                <li><a href="#">Design</a></li>
-                                <li><a href="#">Web Development</a></li>
-                                <li><a href="#">Photography</a></li>
+                                <li><a href="#">Machine Learning</a></li>
+                                <li><a href="#">Deep Learning</a></li>
+                                <li><a href="#">Computer Vision</a></li>
+                                <li><a href="#">NLP</a></li>
                             </ul>
                         </nav><!-- .courses-menu -->
                     </header><!-- .heading -->
                 </div><!-- .col -->
                 {% for course in courses %}
-                <div class="col-12 col-md-6 col-lg-4 px-25">
+                <div class="col-12 col-md-6 col-lg-4 px-25" id="all">
                     <div class="course-content">
                         <figure class="course-thumbnail">
                             <a href="single_courses"><img src="/media/{{course.image}}" alt=""></a>
@@ -355,6 +355,7 @@
                         </div><!-- .course-content-wrap -->
                     </div><!-- .course-content -->
                 </div><!-- .col -->
+                
                 {% endfor %}
                 
                 <div class="col-12 px-25 flex justify-content-center">

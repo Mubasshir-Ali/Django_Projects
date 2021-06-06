@@ -1,0 +1,40 @@
+# version: '3.8'
+
+# services:
+#   djangoprojects:
+#     image: djangoprojectspython -m pip install Pillow
+#     build:
+#       context: .
+#       dockerfile: ./Dockerfile
+#     ports:
+#       - 8000:8000
+
+version: "3.8"
+
+services:
+  mongodb:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: aialieneer
+      MONGO_INITDB_ROOT_PASSWORD: 12345678m
+    volumes:
+    #   - ./db-data:/data/db
+      - ./backup:/backup
+    ports:
+      - 27017:27017
+
+  # mongo:
+  #   image: mongo
+  #   command: --serviceExecutor adaptive
+  #   restart: always
+  #   environment:
+  #     MONGO_INITDB_ROOT_USERNAME: aialieneer
+  #     MONGO_INITDB_ROOT_PASSWORD: 12345678m
+
+  djangoprojects:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - 8000:8000

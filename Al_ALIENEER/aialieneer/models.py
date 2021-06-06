@@ -1,8 +1,5 @@
 from django.db import models
-# from djangotoolbox.fields import ListField
-from mongoengine import *
-import mongoengine
-# import pymongo
+
 import datetime
 
 # Create your models here.
@@ -14,6 +11,7 @@ class Course(models.Model):
     _id = models.AutoField
     course_title = models.CharField(max_length=100)
     slug = models.SlugField()
+    course_category = models.CharField(max_length=100)
     course_author = models.CharField(max_length=100)
     pub_date = models.DateTimeField(auto_now_add=True)
     course_type = models.CharField(max_length=100)
@@ -77,14 +75,13 @@ class Post(models.Model):
 
 #print(db.list_collection_names())
 
-# from mongoengine import connect
-# from mongoengine import Document, StringField, IntField
+
 # # from models import User
 
 # # Connect to MongoDB
 # # connect(db="aialieneer", host="localhost", port=27017)
 
-# from mongoengine import Document, fields
+
 
 # class Single_Post(Document):
 #     s_post_title = fields.StringField(max_length=100)
