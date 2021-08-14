@@ -320,7 +320,7 @@
                     </header><!-- .heading -->
                 </div><!-- .col -->
                 {% for course in courses %}
-                <div class="col-12 col-md-6 col-lg-4 px-25" id="all">
+                <div class="col-12 col-md-68 col-lg-4 px-25" id="all">
                     <div class="course-content">
                         <figure class="course-thumbnail">
                             <a href="single_courses"><img src="/media/{{course.image}}" alt=""></a>
@@ -352,6 +352,9 @@
                                     <span class="course-ratings-count">(4 votes)</span>
                                 </div><!-- .course-ratings -->
                             </footer><!-- .entry-footer -->
+                            <div class="header-bar-cart align-items-center">
+                                <button id="course{{id}}" class="btn btn-primary cart ">Add To Cart</button>
+                            </div><!-- .header-bar-search -->
                         </div><!-- .course-content-wrap -->
                     </div><!-- .course-content -->
                 </div><!-- .col -->
@@ -511,5 +514,32 @@
             </div><!-- .gallery-grid -->
         </div><!-- .gallery-wrap -->
     </section><!-- .home-gallery -->
+
+{% endblock %}
+
+{% block js %}
+
+<script>
+if(localStorage.getItem('cart') == null){
+    var cart = {};
+}
+else
+{
+    cart = JSON.parse(localStorage.getItem('cart'));
+}
+
+// jquery start
+$('.cart').click(function(){
+    var idstr = this.id.toString();
+    if (cart[idstr] != undefined){
+        cart[idstr] = cart[idstr] + 1;
+    }
+else
+{
+    cart[idstr] = 1;
+}
+localStorage.setItem('cart', JSON.stringify(cart));
+});
+</script>
 
 {% endblock %}

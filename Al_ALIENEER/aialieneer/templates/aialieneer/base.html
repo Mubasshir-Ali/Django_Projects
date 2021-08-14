@@ -112,7 +112,7 @@
                             </div><!-- .hamburger-menu -->
 
                             <div class="header-bar-cart">
-                                <a href="#" class="flex justify-content-center align-items-center"><span aria-hidden="true" class="icon_bag_alt"></span></a>
+                                <button id="course{{id}}" class="flex justify-content-center align-items-center cart"><span aria-hidden="true" class="icon_bag_alt"></span></button>
                             </div><!-- .header-bar-search -->
                         </nav><!-- .site-navigation -->
                     </div><!-- .col -->
@@ -256,6 +256,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script type="text/javascript" src="{% static 'aialieneer/js/jquery.collapsible.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'aialieneer/js/custom.js' %}"></script>
 <script type="text/javascript" src="{% static 'aialieneer/vendor/jquery/cusjquery.js' %}"></script>
+{% endblock %}
+
+{% block js %}
+
 {% endblock %}
 
     
