@@ -311,10 +311,10 @@
                         <nav class="courses-menu mt-3 mt-lg-0">
                             <ul class="flex flex-wrap justify-content-md-end align-items-center">
                                 <li class="active"><a href="#">All</a></li>
-                                <li><a href="#">Machine Learning</a></li>
-                                <li><a href="#">Deep Learning</a></li>
-                                <li><a href="#">Computer Vision</a></li>
-                                <li><a href="#">NLP</a></li>
+                                <li><a class="ml">Machine Learning</a></li>
+                                <li><a id="dl">Deep Learning</a></li>
+                                <li><a id="cv">Computer Vision</a></li>
+                                <li><a id="nlp">NLP</a></li>
                             </ul>
                         </nav><!-- .courses-menu -->
                     </header><!-- .heading -->
@@ -352,7 +352,7 @@
                                     <span class="course-ratings-count">(4 votes)</span>
                                 </div><!-- .course-ratings -->
                             </footer><!-- .entry-footer -->
-                            <div class="header-bar-cart align-items-center">
+                            <div class="header-bar-cart text-center">
                                 <button id="course{{id}}" class="btn btn-primary cart ">Add To Cart</button>
                             </div><!-- .header-bar-search -->
                         </div><!-- .course-content-wrap -->
@@ -520,6 +520,69 @@
 {% block js %}
 
 <script>
+
+    jQuery(document).ready(function($){
+        {/* Display COURSES Courses */}
+        $("#courses").click(function(){
+        $("#courses").show();
+        $("#dl").hide();
+        $("#cv").hide();
+        $("#nlp").hide();
+        $("#cpp").hide();
+        $("#ml").hide();
+        });
+    
+        {/* Display ML Courses */}
+        $(".ml").click(function(){
+        $("#ml").show();
+        $("#dl").hide();
+        $("cv").hide();
+        $("nlp").hide();
+        $("cpp").hide();
+        $("courses").hide();
+        });
+    
+        {/* Display DL Courses */}
+        $("#dl").click(function(){
+        $("#dl").show();
+        $("#ml").hide();
+        $("cv").hide();
+        $("nlp").hide();
+        $("cpp").hide();
+        $("courses").hide();
+        });
+    
+        {/* Display CV Courses */}
+        $("#cv").click(function(){
+        $("#cv").show();
+        $("#ml").hide();
+        $("dl").hide();
+        $("nlp").hide();
+        $("cpp").hide();
+        $("courses").hide();
+        });
+    
+        {/* Display NLP Courses */}
+        $("#nlp").click(function(){
+        $("#nlp").show();
+        $("#ml").hide();
+        $("dl").hide();
+        $("cv").hide();
+        $("cpp").hide();
+        $("courses").hide();
+        });
+    
+        {/* Display CPP Courses */}
+        $("#cpp").click(function(){
+        $("#cpp").show();
+        $("#ml").hide();
+        $("dl").hide();
+        $("cv").hide();
+        $("nlp").hide();
+        $("courses").hide();
+        });
+    });
+        
 if(localStorage.getItem('cart') == null){
     var cart = {};
 }
@@ -530,6 +593,7 @@ else
 
 // jquery start
 $('.cart').click(function(){
+    
     var idstr = this.id.toString();
     if (cart[idstr] != undefined){
         cart[idstr] = cart[idstr] + 1;
